@@ -460,5 +460,73 @@
             }
         });
     </script>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- BAGIAN INI UNTUK INPUT LINK ---
+        // Anda bisa menambah atau mengubah link di dalam tanda kurung siku [...]
+        const dataLinks = [
+            {
+                title: "Google Classroom",
+                url: "https://classroom.google.com",
+                icon: "fa-chalkboard-user",
+                color: "bg-blue-500"
+            },
+            {
+                title: "Bilik Ajuan",
+                url: "https://forms.gle/w37GV6Ks9uvdPegj7",
+                icon: "fa-file-signature",
+                color: "bg-indigo-500"
+            },
+            {
+                title: "Instagram Resmi",
+                url: "https://www.instagram.com/dkr_bojonggambir?igsh=M3J5MHlyeDc5eWdm",
+                icon: "fa-brands fa-instagram",
+                color: "bg-pink-500"
+            },
+            {
+                title: "Formulir Pendaftaran",
+                url: "https://bit.ly/m/DKRBOJONGGAMBIRDSW",
+                icon: "fa-file-signature",
+                color: "bg-green-500"
+            },
+            {
+                title: "Jadwal Kegiatan",
+                url: "#",
+                icon: "fa-calendar-days",
+                color: "bg-orange-500"
+            },
+            {
+                title: "Saluran WA",
+                url: "https://whatsapp.com/channel/0029VbCdHiKKgsNyQQnUFo1T",
+                icon: "fa-whatsapp-code",
+                color: "bg-green-600"
+            }
+        ];
+
+        // Fungsi untuk merender link ke HTML
+        const container = document.getElementById('link-container');
+
+        dataLinks.forEach(link => {
+            const card = document.createElement('a');
+            card.href = link.url;
+            card.target = "_blank"; // Buka di tab baru
+            card.className = "bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 flex items-center gap-4 border border-slate-100 group";
+            
+            card.innerHTML = `
+                <div class="${link.color} w-12 h-12 rounded-lg flex items-center justify-center text-white text-xl shadow-lg group-hover:scale-110 transition">
+                    <i class="fa-solid ${link.icon}"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-800 group-hover:text-blue-600 transition">${link.title}</h4>
+                    <p class="text-xs text-slate-400">Klik untuk akses</p>
+                </div>
+                <div class="ml-auto text-slate-300 group-hover:text-blue-500">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    </script>
 </body>
   </html>
